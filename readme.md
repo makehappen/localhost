@@ -14,7 +14,7 @@
     mkdir ~/localhost && cd ~/localhost && git clone git@github.com:makehappen/localhost.git repo
 
 ### 2. Install
-    sh ~/localhost/repo/sh/install.sh
+    sh ~/localhost/repo/src/install.sh
 
 Localhost is now up and running: [http://localhost/](http://localhost/)
 
@@ -22,14 +22,14 @@ Localhost is now up and running: [http://localhost/](http://localhost/)
   * Update hosts file: ~/localhost/hosts.conf
 ####
     # Apply changes
-    sh ~/localhost/repo/sh/restart.sh
+    sh ~/localhost/repo/src/restart.sh
 
 ## Useful Stuff
 
 #### Start / Stop / Restart
-    sh ~/localhost/repo/sh/start.sh
-    sh ~/localhost/repo/sh/stop.sh
-    sh ~/localhost/repo/sh/restart.sh
+    sh ~/localhost/repo/src/start.sh
+    sh ~/localhost/repo/src/stop.sh
+    sh ~/localhost/repo/src/restart.sh
 
 #### DB Server
   * Container host: mysql_container (apps access)
