@@ -19,9 +19,9 @@
 Localhost is now up and running: [http://localhost/](http://localhost/)
 
 ### 3. Add Hosts
-    # 1. Update ~/localhost/hosts.conf
-    
-    # 2. Restart
+  * Update hosts file: ~/localhost/hosts.conf
+####
+    # Apply changes
     sh ~/localhost/repo/sh/restart.sh
 
 ## Useful Stuff
