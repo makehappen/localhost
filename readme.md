@@ -3,8 +3,7 @@
 ### 1. Preparation
   * install docker (if not installed already)
     - https://www.docker.com/docker-mac
-
-
+###
     # install xcode (if not installed already)
     xcode-select --install &>/dev/null
      
