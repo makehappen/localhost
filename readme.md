@@ -51,6 +51,8 @@ Localhost is now up and running: [http://localhost/](http://localhost/)
     # Exit web server
     exit
     
+  * Websites folder: ~/localhost/www
+    * web server /var/www folder mounts it
   * Logs: ~/localhost/log/apache2
     
 #### Included
