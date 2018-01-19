@@ -32,11 +32,11 @@ Localhost is now up and running: [http://localhost/](http://localhost/)
     sh ~/localhost/repo/src/restart.sh
 
 ### Database
-##### Access by apps from docker container
+##### Accessed by apps from docker container
   * Host: mysql_container
   * Port: 3306
   
-##### Access from local machine (command line or via Sequel Pro)
+##### Accessed from local machine (command line or via Sequel Pro)
   * Host: 0.0.0.0
   * Port: 6603
   
@@ -46,8 +46,13 @@ Localhost is now up and running: [http://localhost/](http://localhost/)
   * DB Files: ~/localhost/lib/mysql
 
 ### Redis
-  * Container host: redis_container (apps access)
-  * Local machine host: 0.0.0.0 (manual access)
+##### Accessed by apps from docker container
+  * Host: redis_container
+  
+##### Accessed from local machine (command line)
+  * Host: 0.0.0.0
+
+##### All access type
   * Port: 6379
 
 ### Web
