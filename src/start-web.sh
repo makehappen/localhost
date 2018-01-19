@@ -13,5 +13,7 @@ docker run \
 --publish 80:80 \
 --volume=$PWD/localhost/www:/var/www \
 --volume=$PWD/localhost/log/apache2:/var/log/apache2 \
+--link=mysql_container:mysql_container \
+--link=redis_container:redis_container \
 --volume=$PWD/.ssh:/root/.ssh \
 web-server
