@@ -26,25 +26,31 @@ Localhost is now up and running: [http://localhost/](http://localhost/)
 
 ## Useful Stuff
 
-#### Start / Stop / Restart
+### Start / Stop / Restart
     sh ~/localhost/repo/src/start.sh
     sh ~/localhost/repo/src/stop.sh
     sh ~/localhost/repo/src/restart.sh
 
-#### DB Server
-  * Container host: mysql_container (apps access)
-  * Local machine host: 0.0.0.0 (manual access)
+### Database
+##### Access by apps from docker container
+  * Host: mysql_container
+  * Port: 3306
+  
+##### Access from local machine (command line or via Sequel Pro)
+  * Host: 0.0.0.0
+  * Port: 6603
+  
+##### All access type  
   * User: root
   * Password: mypassword
-  * Port: 6603
-  * Files: ~/localhost/lib/mysql
+  * DB Files: ~/localhost/lib/mysql
 
-#### Redis Server
+### Redis
   * Container host: redis_container (apps access)
   * Local machine host: 0.0.0.0 (manual access)
   * Port: 6379
 
-#### Web Server
+### Web
     # SSH into web server
     docker exec -i -t server_container /bin/bash
 
@@ -55,7 +61,7 @@ Localhost is now up and running: [http://localhost/](http://localhost/)
     * web server /var/www folder mounts it
   * Logs: ~/localhost/log/apache2
     
-#### Included
+### Included
 
   * Ubuntu 16.04
   * PHP 7.0 with common packages
