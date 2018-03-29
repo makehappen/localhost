@@ -34,6 +34,19 @@ Up and running: [http://localhost/](http://localhost/)
     - loads at http://subdomain.my-site.localhost
     - from ~/localhost/www/my-site/subdomain/public
     
+Add your websites to `~/localhost/hosts` file, mapped to `127.0.0.1`, and apply hosts file updates:
+        
+    sh ~/localhost/repo/src/hosts.sh
+
+Example:
+
+    127.0.0.1 www.topleveldomain.localhost
+
+_NOTE: this will overwrite your /etc/hosts file after creating a backup.
+If your /etc/hosts file contains websites you don't want to loose, copy your data before running the command above:_
+
+	sudo cp /etc/hosts ~/localhost/hosts
+
 ## Useful Stuff
 
 ### Start / Stop / Restart
