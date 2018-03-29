@@ -1,2 +1,6 @@
 #!/bin/sh
-sh ~/localhost/repo/src/install.sh
+
+clear
+
+# start servers
+sh ~/localhost/repo/src/start.sh

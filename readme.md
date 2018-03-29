@@ -49,10 +49,18 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
 
 ## Useful Stuff
 
-### Start / Stop / Restart
+### Start / Stop / Restart / Update
+    # start servers
     sh ~/localhost/repo/src/start.sh
+    
+    # stop servers
     sh ~/localhost/repo/src/stop.sh
+    
+    # restarts servers
     sh ~/localhost/repo/src/restart.sh
+    
+    # update servers
+    sh ~/localhost/repo/src/update.sh
 
 ### Apply changes after updating hosts file
     sh ~/localhost/repo/src/hosts.sh
