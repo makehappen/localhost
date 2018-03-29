@@ -1,4 +1,4 @@
-FROM speareducation/ubuntu16.04-apache-php7.0:latest
+FROM speareducation/ubuntu16.04-apache-php7.1:latest
 MAINTAINER Florin Ilie <florin@after5.io>
 
 # Copy virtual hosts

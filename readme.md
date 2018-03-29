@@ -16,14 +16,24 @@
 ### 2. Install
     sh ~/localhost/repo/src/install.sh
 
-Localhost is now up and running: [http://localhost/](http://localhost/)
+Up and running: [http://localhost/](http://localhost/)
 
-### 3. Add Hosts
-  * Update hosts file: ~/localhost/hosts.conf
-####
-    # Apply changes
-    sh ~/localhost/repo/src/restart.sh
+### 3. Add Websites
 
+##### Use the following directory structure for your websites:
+  
+    ~/localhost/www/my-site
+    - loads at http://my-site.localhost
+    - from ~/localhost/www/my-site/public
+    
+    ~/localhost/www/my-site/www
+    - loads at http://www.my-site.localhost
+    - from ~/localhost/www/my-site/www/public
+    
+    ~/localhost/www/my-site/subdomain
+    - loads at http://subdomain.my-site.localhost
+    - from ~/localhost/www/my-site/subdomain/public
+    
 ## Useful Stuff
 
 ### Start / Stop / Restart
@@ -69,12 +79,9 @@ Localhost is now up and running: [http://localhost/](http://localhost/)
 ### Included
 
   * Ubuntu 16.04
-  * PHP 7.0 with common packages
+  * PHP 7.1 with common packages
   * Apache2
   * MySql (latest)
   * Redis (latest)
   * Composer
   * NodeJs
-  * Postfix
-    
-    
