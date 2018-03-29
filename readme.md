@@ -54,6 +54,9 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
     sh ~/localhost/repo/src/stop.sh
     sh ~/localhost/repo/src/restart.sh
 
+### Apply changes after updating hosts file
+    sh ~/localhost/repo/src/hosts.sh
+
 ### Database
 ##### Accessed by apps from docker container
   * Host: mysql_container
