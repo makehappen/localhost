@@ -13,4 +13,4 @@ docker run \
 --env="MYSQL_ROOT_PASSWORD=mypassword" \
 --publish 6603:3306 \
 --volume=$PWD/localhost/lib/mysql/:/var/lib/mysql \
-mysql --sql-mode=""
+mysql:5.7 --sql-mode=""
