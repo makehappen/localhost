@@ -12,6 +12,3 @@ sh ~/localhost/repo/src/clear-cache.sh
 # build image
 sh ~/localhost/repo/src/build.sh
 
-# start servers
-sh ~/localhost/repo/src/restart.sh
-

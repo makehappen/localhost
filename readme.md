@@ -59,7 +59,10 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
     # restarts servers
     sh ~/localhost/repo/src/restart.sh
     
-    # update servers
+    # re-build local image
+    sh ~/localhost/repo/src/build.sh
+
+    # update all servers
     sh ~/localhost/repo/src/update.sh
 
 ### Apply changes after updating hosts file
