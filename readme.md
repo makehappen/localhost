@@ -106,7 +106,7 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
 ### Included
 
   * Ubuntu 16.04
-  * PHP 7.1 with common packages
+  * PHP 7.2 with common packages
   * Apache2
   * MySql (latest)
   * Redis (latest)
