@@ -1,4 +1,4 @@
-FROM speareducation/ubuntu16.04-apache-php7.1:latest
+FROM after5/ubuntu16.04-apache-php7.1:latest
 MAINTAINER Florin Ilie <florin@after5.io>
 
 RUN apt-get update && apt-get install -y \
