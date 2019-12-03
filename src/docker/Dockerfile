@@ -31,6 +31,7 @@ RUN apt install -y \
     php7.3-recode \
     php7.3-tidy \
     php7.3-xmlrpc \
+    php7.3-bcmath \
     php7.3-intl
 
 
