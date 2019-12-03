@@ -128,13 +128,13 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
         sudo ln -s /usr/local/php5-7.3.8-20190811-205217 /usr/local/php5
 
 ##### edit bash profile
-.bash_profile
+    .bash_profile
 
 ##### add PATH
-export PATH=/usr/local/php5/bin:$PATH
+    export PATH=/usr/local/php5/bin:$PATH
 
 ### add helpful aliases
-alias start='sh ~/localhost/repo/src/start.sh'
-alias stop='sh ~/localhost/repo/src/stop.sh'
-alias update='sh ~/localhost/repo/src/update.sh'
-alias sshin='docker exec -i -t server_container /bin/bash'
+    alias start='sh ~/localhost/repo/src/start.sh'
+    alias stop='sh ~/localhost/repo/src/stop.sh'
+    alias update='sh ~/localhost/repo/src/update.sh'
+    alias sshin='docker exec -i -t server_container /bin/bash'
