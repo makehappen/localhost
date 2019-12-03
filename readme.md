@@ -106,9 +106,35 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
 ### Included
 
   * Ubuntu 16.04
-  * PHP 7.2 with common packages
+  * PHP 7.3 with common packages
   * Apache2
-  * MySql (latest)
+  * MySql 5.7
   * Redis (latest)
   * Composer
   * NodeJs
+
+### Missing a package?
+    # 1. ssh in
+    docker exec -i -t server_container /bin/bash
+    
+    # 2. add your package
+
+    # 3. add install command to Dockerfile with RUN and do a PR to be considered for the public repo
+    
+### Upgrade local PHP        
+        cd usr/local
+        curl -s http://php-osx.liip.ch/install.sh | bash -s 7.3
+        sudo rm /usr/local/php5
+        sudo ln -s /usr/local/php5-7.3.8-20190811-205217 /usr/local/php5
+
+##### edit bash profile
+.bash_profile
+
+##### add PATH
+export PATH=/usr/local/php5/bin:$PATH
+
+### add helpful aliases
+alias start='sh ~/localhost/repo/src/start.sh'
+alias stop='sh ~/localhost/repo/src/stop.sh'
+alias update='sh ~/localhost/repo/src/update.sh'
+alias sshin='docker exec -i -t server_container /bin/bash'

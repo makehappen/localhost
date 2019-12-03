@@ -6,7 +6,7 @@ docker rm server_container &>/dev/null
 docker rmi web-server
 
 # build image
-cd ~/localhost/repo/src
+cd ~/localhost/repo/src/docker
 docker build -t web-server .
 
 # start servers
