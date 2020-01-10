@@ -34,6 +34,9 @@ RUN apt install -y \
     php7.3-bcmath \
     php7.3-intl
 
+# composer
+RUN curl -s https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
 
 # ZIP
 RUN apt-get install zip unzip -y
