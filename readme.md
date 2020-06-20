@@ -106,12 +106,20 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
 ### Included
 
   * Ubuntu 16.04
-  * PHP 7.3 with common packages
+  * PHP 7.2 && PHP 7.3 with common packages
   * Apache2
   * MySql 5.7
   * Redis (latest)
   * Composer
   * NodeJs
+
+### Switch from one PHP version to another
+
+    # Use PHP 7.1
+    cd ~/localhost/repo && git checkout releases/php7.1 && sh ~/localhost/repo/src/update.sh
+
+    # Use PHP 7.3
+    cd ~/localhost/repo && git checkout releases/php7.3 && sh ~/localhost/repo/src/update.sh
 
 ### Missing a package?
     # 1. ssh in
