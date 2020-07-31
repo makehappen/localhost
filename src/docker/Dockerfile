@@ -1,53 +1,55 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install software-properties-common -y
-
-COPY debconf.selections /tmp/
-RUN debconf-set-selections /tmp/debconf.selections
+#RUN apt-get upgrade -y
 
 # APACHE
-RUN apt-get install apache2 libapache2-mod-wsgi python-dev -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install apache2 libapache2-mod-wsgi python-dev -y
+
+# UTILS
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libfreetype6-dev apt-utils
+RUN DEBIAN_FRONTEND=noninteractive apt-get install software-properties-common -y
+
+COPY debconf.selections /tmp/
+RUN DEBIAN_FRONTEND=noninteractive debconf-set-selections /tmp/debconf.selections
 
 # PHP
-RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php \
-    && apt update \
-    && apt install php7.3 php7.3-cli php7.3-common -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install php -y
 
-# PHP EXTENSIONS
-RUN apt install -y \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install php-cli php-common -y
+
+# PHP extensions
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     php-pear \
-    php7.3-curl \
-    php7.3-dev \
-    php7.3-gd \
-    php7.3-mbstring \
-    php7.3-zip \
-    php7.3-mysql \
-    php7.3-xml \
-    php7.3-fpm \
-    libapache2-mod-php7.3 \
-    php7.3-imagick \
-    php7.3-recode \
-    php7.3-tidy \
-    php7.3-xmlrpc \
-    php7.3-bcmath \
-    php7.3-intl
+    php-curl \
+    php-dev \
+    php-gd \
+    php-mbstring \
+    php-zip \
+    php-mysql \
+    php-xml \
+    php-fpm \
+    libapache2-mod-php \
+    php-imagick \
+    php-tidy \
+    php-xmlrpc \
+    php-bcmath \
+    php-intl
 
-# composer
-RUN curl -s https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
+# mysql client
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-client
 
 # ZIP
-RUN apt-get install zip unzip -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y zip unzip
 
-RUN apt-get install -y --no-install-recommends \
-    libfreetype6-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git nano tree vim curl mcrypt postfix sqlite3
 
-RUN apt-get install git nodejs nano tree vim curl mcrypt postfix sqlite3 -y
+# composer
+RUN DEBIAN_FRONTEND=noninteractive curl -s https://getcomposer.org/installer | php
+RUN DEBIAN_FRONTEND=noninteractive mv composer.phar /usr/local/bin/composer
 
 # Disable /javascript folder special handling
-RUN apt-get remove javascript-common  -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get remove -y javascript-common
 
 ENV LOG_STDOUT **Boolean**
 ENV LOG_STDERR **Boolean**
@@ -63,7 +65,6 @@ RUN a2enmod rewrite
 RUN a2enmod headers
 RUN a2enmod vhost_alias
 
-RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN chmod +x /usr/sbin/run-lamp.sh
 RUN chown -R www-data:www-data /var/www/html
 
