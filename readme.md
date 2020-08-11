@@ -121,6 +121,9 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
     # Use PHP 7.3
     cd ~/localhost/repo && git checkout releases/php7.3 && sh ~/localhost/repo/src/update.sh
 
+    # Use PHP 7.4
+    cd ~/localhost/repo && git checkout releases/php7.4 && sh ~/localhost/repo/src/update.sh
+
 ### Missing a package?
     # 1. ssh in
     docker exec -i -t server_container /bin/bash
