@@ -1,19 +1,32 @@
 ## Setup
 
-### 1. Preparation
-  * install docker (if not installed already)
+### 1. Prerequisites
+  * Docker
     - https://www.docker.com/docker-mac
-###
-    # install xcode (if not installed already)
-    xcode-select --install &>/dev/null
-     
+
+  * Git
+#####
+    # Homebrew
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    
+    # Install git
+    brew install git
+
+  * SSH Key
+#####  
+    # create an ssh key of you don't have one already
+    ssh-keygen
+    eval "$(ssh-agent -s)"
+    
+  * add your ~/.ssh/id_rsa.pub key to your github account
+
+### 2. Install
     # backup old localhost
     [ -d ~/localhost ] && mv ~/localhost ~/localhost-bkp
      
     # clone localhost repo
     mkdir ~/localhost && cd ~/localhost && git clone git@github.com:makehappen/localhost.git repo
 
-### 2. Install
     sh ~/localhost/repo/src/install.sh
 
 Up and running: [http://localhost/](http://localhost/)
