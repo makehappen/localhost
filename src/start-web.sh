@@ -7,6 +7,10 @@ docker rm server_container &>/dev/null
 
 cd ~/
 
+# default web server to php7.4
+WEB_SERVER=$1
+WEB_SERVER=${WEB_SERVER:=web-server-php7.4}
+
 docker run \
 --detach \
 --name=server_container \
@@ -16,4 +20,4 @@ docker run \
 --link=mysql_container:mysql_container \
 --link=redis_container:redis_container \
 --volume=$PWD/.ssh:/root/.ssh \
-web-server
+$WEB_SERVER

@@ -77,4 +77,4 @@ EXPOSE 443
 CMD ["/usr/sbin/run-lamp.sh"]
 
 # Copy virtual hosts
-COPY hosts.conf /etc/apache2/sites-enabled/hosts.conf
+COPY ../../hosts.conf /etc/apache2/sites-enabled/hosts.conf

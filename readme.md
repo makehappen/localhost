@@ -72,7 +72,7 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
     # restarts servers
     sh ~/localhost/repo/src/restart.sh
     
-    # re-build local image
+    # re-build local images
     sh ~/localhost/repo/src/build.sh
 
     # update all servers
@@ -129,10 +129,10 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
 ### Switch from one PHP version to another
 
     # Use PHP 7.1
-    cd ~/localhost/repo && git checkout releases/php7.1 && sh ~/localhost/repo/src/update.sh
-
+    sh ~/localhost/repo/src/start-web.sh web-server-php7.1
+    
     # Use PHP 7.4
-    cd ~/localhost/repo && git checkout releases/php7.4 && sh ~/localhost/repo/src/update.sh
+    sh ~/localhost/repo/src/start-web.sh web-server-php7.4
 
 ### Missing a package?
     # 1. ssh in
