@@ -34,7 +34,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     php-tidy \
     php-xmlrpc \
     php-bcmath \
-    php-intl
+    php-intl \
+    php-soap
 
 # mysql client
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-client
@@ -77,4 +78,4 @@ EXPOSE 443
 CMD ["/usr/sbin/run-lamp.sh"]
 
 # Copy virtual hosts
-COPY ../../hosts.conf /etc/apache2/sites-enabled/hosts.conf
+COPY hosts.conf /etc/apache2/sites-enabled/hosts.conf

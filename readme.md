@@ -127,7 +127,12 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
   * NodeJs
 
 ### Switch from one PHP version to another
-
+    # create docker images (if not built already)
+    sh ~/localhost/repo/src/build.sh
+    
+    # start servers (if not started)
+    sh ~/localhost/repo/src/start.sh
+    
     # Use PHP 7.1
     sh ~/localhost/repo/src/start-web.sh web-server-php7.1
     
@@ -138,7 +143,7 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
     # 1. ssh in
     docker exec -i -t server_container /bin/bash
     
-    # 2. add your package
+    # 2. add your package (may need `apt-get update` before intalling)
 
     # 3. add install command to Dockerfile with RUN and do a PR to be considered for the public repo
     
@@ -154,8 +159,10 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
 ##### add PATH
     export PATH=/usr/local/php5/bin:$PATH
 
-### add helpful aliases
-    alias docker_start='sh ~/localhost/repo/src/start.sh'
-    alias docker_stop='sh ~/localhost/repo/src/stop.sh'
-    alias docker_update='sh ~/localhost/repo/src/update.sh'
-    alias docker_sshin='docker exec -i -t server_container /bin/bash'
+### add helpful aliases to your ~/.bash_profile
+    alias docker-start='sh ~/localhost/repo/src/start.sh'
+    alias docker-stop='sh ~/localhost/repo/src/stop.sh'
+    alias docker-update='sh ~/localhost/repo/src/update.sh'
+    alias docker-sshin='docker exec -i -t server_container /bin/bash'
+    alias docker-php7.1='sh ~/localhost/repo/src/start-web.sh web-server-php7.1'
+    alias docker-php7.4='sh ~/localhost/repo/src/start-web.sh web-server-php7.4'
