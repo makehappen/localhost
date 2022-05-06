@@ -31,6 +31,9 @@ fi
 # increase php memory limit
 /bin/sed -i "s/memory_limit\ \=\ 128M/memory_limit\ \=\ 1024M/g" /etc/php/8.1/apache2/php.ini
 
+# enable mysql driver
+echo "extension=pdo_mysql.so" >> /etc/php/8.1/apache2/php.ini
+
 # stdout server info:
 if [ ! $LOG_STDOUT ]; then
 cat << EOB

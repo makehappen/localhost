@@ -9,7 +9,7 @@ cd ~/
 
 # default web server to php7.4
 WEB_SERVER=$1
-WEB_SERVER=${WEB_SERVER:=web-server-php7.4}
+WEB_SERVER=${WEB_SERVER:=web-server-php8.1}
 
 docker run \
 --detach \

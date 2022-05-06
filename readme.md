@@ -141,7 +141,7 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
 
     # Use PHP 8.1
     sh ~/localhost/repo/src/start-web.sh web-server-php8.1
-    # temp fix: 1. ssh into docker container 2. run `service php8.0-fpm start`
+    # temp fix: 1. ssh into docker container 2. run `service php8.1-fpm start`
 
 ### Missing a package?
     # 1. ssh in

@@ -68,7 +68,7 @@ RUN a2enmod rewrite
 RUN a2enmod headers
 RUN a2enmod vhost_alias
 RUN a2enmod proxy_fcgi setenvif
-RUN a2enconf php8.0-fpm
+RUN a2enconf php8.1-fpm
 
 RUN chmod +x /usr/sbin/run-lamp.sh
 RUN chown -R www-data:www-data /var/www/html
@@ -81,11 +81,11 @@ EXPOSE 443
 
 CMD ["/usr/sbin/run-lamp.sh"]
 
-# apt-get install php8.0-mysqlnd
-# apt-get install php8.0-curl
-# apt-get install php8.0-mbstring
-# apt-get install php8.0-xml
-# service php8.0-fpm start
+# apt-get install php8.1-mysqlnd
+# apt-get install php8.1-curl
+# apt-get install php8.1-mbstring
+# apt-get install php8.1-xml
+# service php8.1-fpm start
 # service apache2 reload
 
 # Copy virtual hosts
