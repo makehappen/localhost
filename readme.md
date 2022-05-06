@@ -139,6 +139,10 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
     # Use PHP 7.4
     sh ~/localhost/repo/src/start-web.sh web-server-php7.4
 
+    # Use PHP 8.1
+    sh ~/localhost/repo/src/start-web.sh web-server-php8.1
+    # temp fix: 1. ssh into docker container 2. run `service php8.0-fpm start`
+
 ### Missing a package?
     # 1. ssh in
     docker exec -i -t server_container /bin/bash
@@ -147,12 +151,6 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
 
     # 3. add install command to Dockerfile with RUN and do a PR to be considered for the public repo
     
-### Upgrade local PHP        
-        cd usr/local
-        curl -s http://php-osx.liip.ch/install.sh | bash -s 7.3
-        sudo rm /usr/local/php5
-        sudo ln -s /usr/local/php5-7.3.8-20190811-205217 /usr/local/php5
-
 ##### edit bash profile
     .bash_profile
 
@@ -166,3 +164,4 @@ If your /etc/hosts file contains websites you don't want to loose, copy your dat
     alias docker-sshin='docker exec -i -t server_container /bin/bash'
     alias docker-php7.1='sh ~/localhost/repo/src/start-web.sh web-server-php7.1'
     alias docker-php7.4='sh ~/localhost/repo/src/start-web.sh web-server-php7.4'
+    alias docker-php8.1='sh ~/localhost/repo/src/start-web.sh web-server-php8.1'
